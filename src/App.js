@@ -11,6 +11,7 @@ function App() {
 	const isUserLoggedIn = useSelector(
 		(state) => state.auth.auth.isUserLoggedIn
 	);
+	// console.log("is", isUserLoggedIn);
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 	useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
 			if (pathname === "/login") navigate("/");
 			else navigate(pathname);
 		} else {
+			console.log(pathname);
 			navigate("/login");
 		}
 	}, [navigate, isUserLoggedIn, pathname]);
@@ -27,9 +29,9 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="/login" element={<Login />} />
+				<Route path="about" element={<About />} />
+				<Route path="contact" element={<Contact />} />
+				<Route path="login" element={<Login />} />
 			</Routes>
 		</div>
 	);

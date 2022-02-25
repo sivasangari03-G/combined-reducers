@@ -14,6 +14,7 @@ export const getValue = (key) => {
 	}
 };
 
+
 /**
  * setting value in localStorage as key: value pair
  * @param {string} key whose value is to be updated in JSON.
